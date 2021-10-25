@@ -129,17 +129,18 @@ public class ListaUtil {
         
         }else{
             
-            Integer vereficar = inteiros.get(0);
+            Integer isMaior = inteiros.get(0);
         
             for(Integer inteiro : inteiros) {
                 
-                if(inteiro > vereficar){ 
+                if(inteiro > isMaior){ 
                     
-                    retornar = inteiro; 
+                    isMaior = inteiro; 
                 
                 }
-                
             }
+            
+            retornar = isMaior;
         }
     
         return retornar;
@@ -151,7 +152,6 @@ public class ListaUtil {
         public Integer getMenor(){
     
         Integer retornar = 0;
-        Integer isMenor = inteiros.get(0);
         
         if(inteiros.isEmpty()){
         
@@ -159,15 +159,18 @@ public class ListaUtil {
         
         }else{
         
+        Integer isMenor = inteiros.get(0);
+        
             for (Integer inteiro : inteiros) {
                 
                 if(inteiro < isMenor){
                     
-                    retornar = inteiro;
+                    isMenor = inteiro;
                 
                 }
-                
             }
+            
+            retornar = isMenor;
         }
     
         return retornar;
@@ -179,25 +182,23 @@ public class ListaUtil {
     public boolean hasDuplicidade(){
         
         boolean vereficar = false;
+        Integer i = 1;
         
         for (Integer inteiro : inteiros) {
             
-            for (Integer inteiro1 : inteiros) {
-             
-                if(inteiro == inteiro1){
+            for ( ; i < inteiros.size() ; i++) {
+                
+                if(inteiro == inteiros.get(i)){
 
-                    vereficar = false;
-                
-                }else{
-                
                     vereficar = true;
                 
                 }
-                
             }
+            i++;
         }
     
         return vereficar;
+        
     }
         
 }
