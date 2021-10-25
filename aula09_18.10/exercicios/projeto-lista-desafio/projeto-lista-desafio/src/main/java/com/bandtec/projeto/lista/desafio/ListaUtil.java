@@ -47,11 +47,7 @@ public class ListaUtil {
     
         Integer retornar = 0;
         
-        if(inteiros.isEmpty()){
-        
-            retornar = 0;
-        
-        }else{
+        if(!(inteiros.isEmpty())){
         
             for(Integer inteiro : inteiros) {
                 
@@ -73,13 +69,9 @@ public class ListaUtil {
     
         Integer retornar = 0;
         
-        if(inteiros.isEmpty()){
+        if(!(inteiros.isEmpty())){
         
-            retornar = 0;
-        
-        }else{
-        
-            for (Integer inteiro : inteiros) {
+            for(Integer inteiro : inteiros) {
                 
                 if((inteiro % 2) != 0){
                 
@@ -99,17 +91,15 @@ public class ListaUtil {
     
         Integer retornar = 0;
         
-        if(inteiros.isEmpty()){
-        
-            retornar = 0;
-        
-        }else{
+        if(!(inteiros.isEmpty())){
         
             for(Integer inteiro : inteiros) {
                 
                 retornar+=inteiro;
                 
             }
+            
+            return retornar;
         
         }
     
@@ -120,15 +110,9 @@ public class ListaUtil {
 // -----------------------------------------------------------------------------    
     
     public Integer getMaior(){
-    
-        Integer retornar = 0; 
+
+        if(!(inteiros.isEmpty())){
         
-        if(inteiros.isEmpty()){
-        
-            retornar = 0;
-        
-        }else{
-            
             Integer isMaior = inteiros.get(0);
         
             for(Integer inteiro : inteiros) {
@@ -140,28 +124,23 @@ public class ListaUtil {
                 }
             }
             
-            retornar = isMaior;
+            return isMaior;
+        
         }
     
-        return retornar;
+        return 0;
     
     }
 
 // -----------------------------------------------------------------------------    
 
-        public Integer getMenor(){
-    
-        Integer retornar = 0;
+    public Integer getMenor(){
         
-        if(inteiros.isEmpty()){
-        
-            retornar = 0;
-        
-        }else{
-        
-        Integer isMenor = inteiros.get(0);
-        
-            for (Integer inteiro : inteiros) {
+        if(!(inteiros.isEmpty())){
+       
+            Integer isMenor = inteiros.get(0);
+            
+             for (Integer inteiro : inteiros) {
                 
                 if(inteiro < isMenor){
                     
@@ -170,10 +149,11 @@ public class ListaUtil {
                 }
             }
             
-            retornar = isMenor;
+            return isMenor;
+            
         }
     
-        return retornar;
+        return 0;
     
     }
 
@@ -181,24 +161,25 @@ public class ListaUtil {
 
     public boolean hasDuplicidade(){
         
-        boolean vereficar = false;
         Integer i = 1;
         
         for (Integer inteiro : inteiros) {
             
             for ( ; i < inteiros.size() ; i++) {
                 
-                if(inteiro == inteiros.get(i)){
+                if(inteiro.equals(inteiros.get(i))){
 
-                    vereficar = true;
+                    return true;
                 
                 }
             }
             i++;
         }
     
-        return vereficar;
+        return false;
         
     }
-        
+    
+// -----------------------------------------------------------------------------
+    
 }
